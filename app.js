@@ -8,6 +8,7 @@ const movies = require('./routers/movie');
 let path = require('path');
 const app = express();
 app.use("/", express.static(path.join(__dirname, "dist/movieAng")));
+
 app.listen(8080);
 
 
@@ -37,3 +38,7 @@ app.get('/movies', movies.getAll);
 app.post('/movies', movies.createOne);
 app.get('/movies/:id', movies.getOne);
 app.put('/movies/:id', movies.updateOne);
+app.delete('/movies/:id', movies.deleteOne);
+app.post('/movies/:id/actors', movies.addActor);
+
+app.use("*", express.static(path.join(__dirname, "dist/movieAng")));
