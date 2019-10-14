@@ -11,6 +11,7 @@ export class DeleteallactorComponent implements OnInit {
   private actorsDB: any[] = [];
 
   constructor(private dbService: DatabaseService, private router: Router) { }
+  
   ngOnInit() {
     this.onGetActors();
   }

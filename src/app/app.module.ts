@@ -18,6 +18,7 @@ import { AddactortomovieComponent } from './addactortomovie/addactortomovie.comp
 import { ViewnotfoundComponent } from './viewnotfound/viewnotfound.component';
 import { DeleteallmovieComponent } from './deleteallmovie/deleteallmovie.component';
 import { DeleteallactorComponent } from './deleteallactor/deleteallactor.component';
+import { DeleteallComponent } from './deleteall/deleteall.component';
 
 const appRoutes: Routes = [
   { path: "listactors", component: ListactorsComponent },
@@ -28,14 +29,13 @@ const appRoutes: Routes = [
   { path: "deletemovie", component: DeletemovieComponent },
   { path: "listmovie", component: ListmovieComponent },
   { path: "addactortomovie", component: AddactortomovieComponent },
-  { path: "deleteallmovie", component: DeleteallmovieComponent },
-  { path: "deleteallactor", component: DeleteallactorComponent },
+  { path: "deleteall", component: DeleteallComponent },
   { path: "", redirectTo: "/listactors", pathMatch: "full" },
   { path: "**", component: ViewnotfoundComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, AddactorComponent, ListactorsComponent, UpdateactorComponent, DeleteactorComponent, AddmovieComponent, DeletemovieComponent, ListmovieComponent, AddactortomovieComponent, ViewnotfoundComponent, DeleteallmovieComponent, DeleteallactorComponent],
+  declarations: [AppComponent, AddactorComponent, ListactorsComponent, UpdateactorComponent, DeleteactorComponent, AddmovieComponent, DeletemovieComponent, ListmovieComponent, AddactortomovieComponent, ViewnotfoundComponent, DeleteallmovieComponent, DeleteallactorComponent, DeleteallComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule,NgbModule,RouterModule.forRoot(appRoutes)
   ],
   providers: [DatabaseService],

@@ -3,17 +3,19 @@ import { DatabaseService } from "../database.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-deleteallmovie',
-  templateUrl: './deleteallmovie.component.html',
-  styleUrls: ['./deleteallmovie.component.css']
+  selector: 'app-deleteall',
+  templateUrl: './deleteall.component.html',
+  styleUrls: ['./deleteall.component.css']
 })
-export class DeleteallmovieComponent implements OnInit {
+export class DeleteallComponent implements OnInit {
   private movieDB: any[] = [];
+  private actorsDB: any[] = [];
 
   constructor(private dbService: DatabaseService, private router: Router) { }
 
   ngOnInit() {
     this.onGetMovies();
+
   }
 
   onGetMovies(){
@@ -21,7 +23,12 @@ export class DeleteallmovieComponent implements OnInit {
       this.movieDB = data;
     })
   }
-  
+  onGetActors() {
+    this.dbService.getActors().subscribe((data: any[]) => {
+      this.movieDB = data;
+    })
+  }
+
   onDeleteALLMovie(){
     this.dbService.deleteAllMovie().subscribe(result => {
       this.onGetMovies();
@@ -29,4 +36,10 @@ export class DeleteallmovieComponent implements OnInit {
     })
   }
 
+  onDeleteALLActor() {
+    this.dbService.deleteAllActor().subscribe(result => {
+      this.onGetActors();
+      this.router.navigate(["/listactors"]);
+    });
+  }
 }

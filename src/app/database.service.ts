@@ -54,10 +54,10 @@ export class DatabaseService {
 
   deleteAllMovie(){
     return this.http.delete("/movies", httpOptions);
-
   }
+
   deleteAllActor() {
-    return this.http.delete("actors", httpOptions);
+    return this.http.delete("/actors", httpOptions);
   }
 
 }
