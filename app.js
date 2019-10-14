@@ -31,6 +31,7 @@ app.get('/actors/:id', actors.getOne);
 app.put('/actors/:id', actors.updateOne);
 app.post('/actors/:id/movies', actors.addMovie);
 app.delete('/actors/:id', actors.deleteOne);
+app.delete('/actors', actors.deleteAll);
 
 
 //Movie RESTFul  endpoints
@@ -40,5 +41,6 @@ app.get('/movies/:id', movies.getOne);
 app.put('/movies/:id', movies.updateOne);
 app.delete('/movies/:id', movies.deleteOne);
 app.post('/movies/:id/actors', movies.addActor);
+app.delete('/movies', movies.deleteAll);
 
 app.use("*", express.static(path.join(__dirname, "dist/movieAng")));

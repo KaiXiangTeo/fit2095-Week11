@@ -69,5 +69,12 @@ module.exports = {
             })
         });
     },
+    deleteAll: function (req, res) {
+        Actor.findOneAndRemove({}, function (err) {
+            if (err) return res.status(400).json(err);
+            res.json();
+        });
+    },
+
 
 };

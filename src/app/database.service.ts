@@ -52,4 +52,12 @@ export class DatabaseService {
     return this.http.put(url, data, httpOptions);
   }
 
+  deleteAllMovie(){
+    return this.http.delete("/movies", httpOptions);
+
+  }
+  deleteAllActor() {
+    return this.http.delete("actors", httpOptions);
+  }
+
 }
